@@ -9,6 +9,6 @@ app.get("/", (req, res) => {
   res.send("Hello from the backend route");
 });
 
-app.listen(3000, () => {
+app.listen(3001, () => {
   console.log("Server is listening on the port 3000");
 });

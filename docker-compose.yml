@@ -1,0 +1,22 @@
+version: "3.5"
+services:
+  app:
+    build: ./front
+    container_name: front-app
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - sheninth-network
+  backend:
+    build: ./server
+    container_name: server
+    ports:
+      - "3001:3001"
+    networks:
+      - sheninth-network
+networks:
+  sheninth-network:
+    driver: bridge
